@@ -1,3 +1,8 @@
+<<<<<<< 1f410e4a8ffa6c489a35cf2326089cf9c9b9c15a
 _site/
 .sass-cache/
+=======
+_site
+.sass-cache
+>>>>>>> Save my work
 .jekyll-metadata
