@@ -9,14 +9,14 @@
     >
       <v-list>
         <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
+          v-for="(item, index) in items"
+          :key="index"
           :to="item.to"
           router
           exact
         >
           <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <fa-icon :icon="item.icon" style="font-size: 20px" />
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title v-text="item.title" />
@@ -32,8 +32,11 @@
       </v-app-bar-nav-icon>
       <v-toolbar-title v-text="title" />
       <v-spacer />
+      <v-btn icon href="https://github.com/zygopleural" target="_blank">
+        <fa-icon :icon="['fab', 'github']" style="font-size: 36px" />
+      </v-btn>
       <v-btn icon @click.stop="">
-        <v-icon>mdi-application</v-icon>
+        <fa-icon :icon="['fab', 'github']" style="font-size: 36px" />
       </v-btn>
     </v-app-bar>
     <v-main>
@@ -54,17 +57,17 @@ export default {
       drawer: false,
       items: [
         {
-          icon: 'mdi-home',
+          icon: ['fas', 'home'],
           title: 'Home',
           to: '/',
         },
         {
-          icon: 'mdi-laptop',
+          icon: ['fas', 'laptop-code'],
           title: 'Experience',
           to: '/experience',
         },
         {
-          icon: 'mdi-school',
+          icon: ['fas', 'graduation-cap'],
           title: 'Education',
           to: '/education',
         },

@@ -36,6 +36,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    // https://www.npmjs.com/package/@nuxtjs/fontawesome
+    '@nuxtjs/fontawesome',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -74,4 +76,18 @@ export default {
   sitemap: {
     hostname: 'https://zygopleural.github.io',
   },
+
+  // Font Awesome Configuration: https://www.npmjs.com/package/@nuxtjs/fontawesome
+  fontawesome: {
+    component: 'fa',
+    suffix: true,
+    icons: {
+      solid: [
+        'faHome',
+        'faLaptopCode',
+        'faGraduationCap',
+      ],
+      brands: ['faGithub'],
+    },
+  }
 }
