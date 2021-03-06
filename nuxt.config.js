@@ -6,8 +6,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - zygopleural',
-    title: 'zygopleural',
+    titleTemplate: '%s - Lee Staples',
+    title: 'Home',
     htmlAttrs: {
       lang: 'en',
     },
