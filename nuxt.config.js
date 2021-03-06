@@ -42,6 +42,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/sitemap',
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -68,4 +69,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // Sitemap Configuration: https://npmjs.com/package/@nuxtjs/sitemap
+  sitemap: {
+    hostname: 'https://zygopleural.github.io',
+  },
 }
