@@ -86,8 +86,22 @@ export default {
         'faHome',
         'faLaptopCode',
         'faGraduationCap',
+        'faSchool',
+        'faUniversity',
+        'faSun',
+        'faMoon',
       ],
-      brands: ['faGithub'],
+      brands: [
+        'faGithub',
+        'faLinkedin',
+      ],
     },
-  }
+  },
+
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: true
+    }
+  },
 }

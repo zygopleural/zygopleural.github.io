@@ -26,26 +26,45 @@
     </v-navigation-drawer>
     <v-app-bar clipped-left app elevate-on-scroll>
       <v-app-bar-nav-icon>
-        <v-avatar size="36px">
+        <v-avatar size="40px">
           <img alt="Avatar" src="/lee.jpeg" />
         </v-avatar>
       </v-app-bar-nav-icon>
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn icon href="https://github.com/zygopleural" target="_blank">
-        <fa-icon :icon="['fab', 'github']" style="font-size: 36px" />
-      </v-btn>
-      <v-btn icon @click.stop="">
-        <fa-icon :icon="['fab', 'github']" style="font-size: 36px" />
-      </v-btn>
+      <v-switch
+        hide-details
+        v-model="$vuetify.theme.dark"
+      />
+      <v-app-bar-nav-icon v-if="$vuetify.theme.dark">
+        <fa-icon :icon="['fas', 'moon']" style="font-size: 30px" />
+      </v-app-bar-nav-icon>
+      <v-app-bar-nav-icon v-else>
+        <fa-icon :icon="['fas', 'sun']" style="font-size: 30px" />
+      </v-app-bar-nav-icon>
     </v-app-bar>
     <v-main>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <v-sheet
+        class="overflow-y-auto"
+        min-height="100%"
+      >
+        <v-container>
+          <nuxt />
+        </v-container>
+      </v-sheet>
     </v-main>
-    <v-footer absolute app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+    <v-footer absolute app class="d-flex justify-space-between">
+      <div>
+        <span>&copy; {{ new Date().getFullYear() }}</span>
+      </div>
+      <div>
+        <v-btn icon href="https://github.com/zygopleural" target="_blank">
+          <fa-icon :icon="['fab', 'github']" style="font-size: 30px" />
+        </v-btn>
+        <v-btn icon href="https://linkedin.com/in/lmstaples" target="_blank">
+          <fa-icon :icon="['fab', 'linkedin']" style="font-size: 30px" />
+        </v-btn>
+      </div>
     </v-footer>
   </v-app>
 </template>
@@ -74,6 +93,6 @@ export default {
       ],
       title: 'Hey, I’m Lee 👋🏼',
     }
-  },
+  }
 }
 </script>
