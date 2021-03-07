@@ -53,7 +53,7 @@
         </v-container>
       </v-sheet>
     </v-main>
-    <v-footer absolute app class="d-flex justify-space-between">
+    <v-footer fixed app class="d-flex justify-space-between">
       <div>
         <span>&copy; {{ new Date().getFullYear() }}</span>
       </div>

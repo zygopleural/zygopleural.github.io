@@ -11,7 +11,7 @@
       ></span>
     </template>
     <template v-slot:icon>
-      <fa-icon :icon="icon" style="font-size: 20px" />
+      <fa-icon :icon="['fas', 'laptop-code']" style="font-size: 20px" />
     </template>
     <v-card
       :color="color"
@@ -19,14 +19,26 @@
       elevation="24"
     >
       <v-card-title>
-        {{ title }}
+        {{ title }} - {{ position }}
       </v-card-title>
-      <v-card-subtitle />
-      <div>
-        <v-card-text class="white" style="color: black">
-          {{ text }}
-        </v-card-text>
-      </div>
+      <v-card-subtitle>
+        {{ type }}
+      </v-card-subtitle>
+      <v-list disabled>
+        <v-list-item
+          v-for="(item, index) in items"
+          :key="index"
+        >
+          <v-list-item-icon>
+            <fa-icon :icon="['fas', 'code']" style="font-size: 15px" />
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title class="text-wrap">
+              {{ item }}
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
     </v-card>
   </v-timeline-item>
 </template>
@@ -38,16 +50,20 @@ export default {
       type: String,
       required: true
     },
-    icon: {
-      type: Array,
-      required: true
-    },
     title: {
       type: String,
       required: true
     },
-    text: {
+    position: {
       type: String,
+      required: true
+    },
+    type: {
+      type: String,
+      required: true
+    },
+    items: {
+      type: Array,
       required: true
     },
     from: {

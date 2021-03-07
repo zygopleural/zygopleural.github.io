@@ -2,6 +2,7 @@
   <v-row>
     <v-col>
       <v-timeline
+        align-top
         :dense="$vuetify.breakpoint.smAndDown"
       >
         <education-timeline-item
