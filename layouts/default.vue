@@ -78,6 +78,11 @@ export default {
           title: 'Education',
           to: '/education',
         },
+        {
+          icon: ['fas', 'id-card'],
+          title: 'Contact',
+          to: '/contact',
+        },
       ],
       title: 'Hey, I’m Lee 👋🏼',
     }

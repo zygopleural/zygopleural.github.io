@@ -91,6 +91,7 @@ export default {
         'faSun',
         'faMoon',
         'faCode',
+        'faIdCard',
       ],
       brands: ['faGithub', 'faLinkedin'],
     },
