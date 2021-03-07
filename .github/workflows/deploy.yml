@@ -82,4 +82,9 @@ jobs:
         run: npm run generate
 
       - name: Deploy ✈️
-        run: npm run deploy
+        uses: s0/git-publish-subdir-action@v2.4.0
+        env:
+          REPO: self
+          BRANCH: master
+          FOLDER: dist
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
