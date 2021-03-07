@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import Logo from '@/components/Logo.vue'
+import WaveHand from '@/components/WaveHand'
 
-describe('Logo', () => {
+describe('WaveHand', () => {
   test('is a Vue instance', () => {
-    const wrapper = mount(Logo)
+    const wrapper = mount(WaveHand)
     expect(wrapper.vm).toBeTruthy()
   })
 })

@@ -24,7 +24,10 @@
           <img alt="Avatar" src="/lee.jpeg" />
         </v-avatar>
       </v-app-bar-nav-icon>
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title>
+        {{ title }}
+        <wave-hand delay />
+      </v-toolbar-title>
       <v-spacer />
       <v-switch v-model="$vuetify.theme.dark" hide-details />
       <v-app-bar-nav-icon v-if="$vuetify.theme.dark">
@@ -58,7 +61,12 @@
 </template>
 
 <script>
+import WaveHand from '@/components/WaveHand'
+
 export default {
+  components: {
+    WaveHand,
+  },
   data() {
     return {
       drawer: false,
@@ -79,7 +87,7 @@ export default {
           to: '/education',
         },
       ],
-      title: 'Hey, I’m Lee 👋🏼',
+      title: 'Hey, I’m Lee',
     }
   },
 }
