@@ -1,27 +1,22 @@
 name: ci
 
 on:
-  push:
-    branches:
-      - main
-      - master
   pull_request:
     branches:
-      - main
-      - master
+      - develop
 
 jobs:
-  ci:
+  test:
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
-        os: [ubuntu-latest]
-        node: [14]
+        os: [ ubuntu-latest ]
+        node: [ 14 ]
 
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
 
       - name: Setup node env 🏗
         uses: actions/setup-node@v2.1.5
@@ -32,12 +27,17 @@ jobs:
         uses: actions/cache@v2.1.4
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ runner.node }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
+            ${{ runner.os }}-node-${{ runner.node }}-
             ${{ runner.os }}-node-
+            ${{ runner.os }}-
 
       - name: Install dependencies 👨🏻‍💻
         run: npm ci
+
+      - name: Run auditer 🚓
+        run: npm audit
 
       - name: Run linter 👀
         run: npm run lint

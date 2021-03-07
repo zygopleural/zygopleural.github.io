@@ -1,34 +1,21 @@
 <template>
-  <v-timeline-item
-    :color="color"
-    fill-dot
-    large
-  >
-    <template v-slot:opposite>
+  <v-timeline-item :color="color" fill-dot large>
+    <template #opposite>
       <span
         :class="`headline font-weight-bold ${color}--text`"
         v-text="`${from} - ${to}`"
       ></span>
     </template>
-    <template v-slot:icon>
+    <template #icon>
       <fa-icon :icon="['fas', 'laptop-code']" style="font-size: 20px" />
     </template>
-    <v-card
-      :color="color"
-      :dark="$vuetify.theme.dark"
-      elevation="24"
-    >
-      <v-card-title>
-        {{ title }} - {{ position }}
-      </v-card-title>
+    <v-card :color="color" :dark="$vuetify.theme.dark" elevation="24">
+      <v-card-title> {{ title }} - {{ position }} </v-card-title>
       <v-card-subtitle>
         {{ type }}
       </v-card-subtitle>
       <v-list disabled>
-        <v-list-item
-          v-for="(item, index) in items"
-          :key="index"
-        >
+        <v-list-item v-for="(item, index) in items" :key="index">
           <v-list-item-icon>
             <fa-icon :icon="['fas', 'code']" style="font-size: 15px" />
           </v-list-item-icon>
@@ -48,31 +35,31 @@ export default {
   props: {
     color: {
       type: String,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      required: true
+      required: true,
     },
     position: {
       type: String,
-      required: true
+      required: true,
     },
     type: {
       type: String,
-      required: true
+      required: true,
     },
     items: {
       type: Array,
-      required: true
+      required: true,
     },
     from: {
       type: String,
-      required: true
+      required: true,
     },
     to: {
       type: String,
-      required: true
+      required: true,
     },
   },
 }

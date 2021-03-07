@@ -1,10 +1,7 @@
 <template>
   <v-row>
     <v-col>
-      <v-timeline
-        align-top
-        :dense="$vuetify.breakpoint.smAndDown"
-      >
+      <v-timeline align-top :dense="$vuetify.breakpoint.smAndDown">
         <experience-timeline-item
           v-for="(item, index) in items"
           :key="index"
@@ -48,7 +45,6 @@ export default {
           'Expanded asynchronous serverless event based system for emails, sms, internal notifications, claims processing, + more',
           'Introduced serverless APIs for routing 3rd party webhooks to correct environment',
           'Expanded frontend skills, Vue.js + in-house design system using React Styled Components',
-
         ],
         from: 'June 2019',
         to: 'December 2020',

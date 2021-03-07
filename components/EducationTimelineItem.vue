@@ -1,23 +1,15 @@
 <template>
-  <v-timeline-item
-    :color="color"
-    fill-dot
-    large
-  >
-    <template v-slot:opposite>
+  <v-timeline-item :color="color" fill-dot large>
+    <template #opposite>
       <span
         :class="`headline font-weight-bold ${color}--text`"
         v-text="`${from} - ${to}`"
       ></span>
     </template>
-    <template v-slot:icon>
+    <template #icon>
       <fa-icon :icon="icon" style="font-size: 20px" />
     </template>
-    <v-card
-      :color="color"
-      :dark="$vuetify.theme.dark"
-      elevation="24"
-    >
+    <v-card :color="color" :dark="$vuetify.theme.dark" elevation="24">
       <v-card-title>
         {{ title }}
       </v-card-title>
@@ -36,27 +28,27 @@ export default {
   props: {
     color: {
       type: String,
-      required: true
+      required: true,
     },
     icon: {
       type: Array,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      required: true
+      required: true,
     },
     text: {
       type: String,
-      required: true
+      required: true,
     },
     from: {
       type: String,
-      required: true
+      required: true,
     },
     to: {
       type: String,
-      required: true
+      required: true,
     },
   },
 }

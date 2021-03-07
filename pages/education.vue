@@ -1,10 +1,7 @@
 <template>
   <v-row>
     <v-col>
-      <v-timeline
-        align-top
-        :dense="$vuetify.breakpoint.smAndDown"
-      >
+      <v-timeline align-top :dense="$vuetify.breakpoint.smAndDown">
         <education-timeline-item
           v-for="(item, index) in items"
           :key="index"
@@ -36,7 +33,8 @@ export default {
         color: 'red',
         icon: ['fas', 'university'],
         title: 'Palmers College',
-        text: '3 A-Levels (A*AB): Maths, Further Maths, Physics; 1 AS-Level (A): Computing',
+        text:
+          '3 A-Levels (A*AB): Maths, Further Maths, Physics; 1 AS-Level (A): Computing',
         from: '2010',
         to: '2012',
       },
@@ -44,7 +42,8 @@ export default {
         color: 'green',
         icon: ['fas', 'school'],
         title: 'Gable Hall School',
-        text: '12 GCSEs (A*A*A*AAAABBBBC), OCR National 1st Award in IT (Distinction), Business German',
+        text:
+          '12 GCSEs (A*A*A*AAAABBBBC), OCR National 1st Award in IT (Distinction), Business German',
         from: '2005',
         to: '2010',
       },

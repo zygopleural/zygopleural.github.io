@@ -92,17 +92,14 @@ export default {
         'faMoon',
         'faCode',
       ],
-      brands: [
-        'faGithub',
-        'faLinkedin',
-      ],
+      brands: ['faGithub', 'faLinkedin'],
     },
   },
 
   vue: {
     config: {
       productionTip: false,
-      devtools: true
-    }
+      devtools: true,
+    },
   },
 }

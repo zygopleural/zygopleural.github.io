@@ -1,12 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      clipped
-      expand-on-hover
-      permanent
-      app
-    >
+    <v-navigation-drawer v-model="drawer" clipped expand-on-hover permanent app>
       <v-list>
         <v-list-item
           v-for="(item, index) in items"
@@ -32,10 +26,7 @@
       </v-app-bar-nav-icon>
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-switch
-        hide-details
-        v-model="$vuetify.theme.dark"
-      />
+      <v-switch v-model="$vuetify.theme.dark" hide-details />
       <v-app-bar-nav-icon v-if="$vuetify.theme.dark">
         <fa-icon :icon="['fas', 'moon']" style="font-size: 30px" />
       </v-app-bar-nav-icon>
@@ -44,10 +35,7 @@
       </v-app-bar-nav-icon>
     </v-app-bar>
     <v-main>
-      <v-sheet
-        class="overflow-y-auto"
-        min-height="100%"
-      >
+      <v-sheet class="overflow-y-auto" min-height="100%">
         <v-container>
           <nuxt />
         </v-container>
@@ -93,6 +81,6 @@ export default {
       ],
       title: 'Hey, I’m Lee 👋🏼',
     }
-  }
+  },
 }
 </script>
