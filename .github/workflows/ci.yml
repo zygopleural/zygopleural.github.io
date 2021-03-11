@@ -27,11 +27,11 @@ jobs:
         uses: actions/cache@v2.1.4
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ runner.node }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ matrix.os }}-node-${{ matrix.node }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-${{ runner.node }}-
-            ${{ runner.os }}-node-
-            ${{ runner.os }}-
+            ${{ matrix.os }}-node-${{ matrix.node }}-
+            ${{ matrix.os }}-node-
+            ${{ matrix.os }}-
 
       - name: Install dependencies 👨🏻‍💻
         run: npm ci
